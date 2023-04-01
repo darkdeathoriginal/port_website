@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/660d2d5322.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu"> 
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Backend Devoloper</p>
+                <h1>Hi, I'm <span>Anwin</span><br>Sharon from India</h1>
+            </div>
+        </div>
+    </div>
+
+<!-- ---------about---------- -->
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-2">
+                    <h1 class="subtitle">About me</h1>
+                    <p>I am Anwin Sharon from Kerala,India. I am a student programmer currently persuing B-Tech CSE at SRM institute of Technology.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web development</span><br>Back end programing</li>
+                            <li><span>App development</span><br>Android app</li>
+                            <li><span>UI?UX</span><br>Design</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Nodejs</span><br>Created backend plugins for whatsapp bot</li>
+                            <li><span>React-Native</span><br>Created multiple Apps</li>
+                            <li><span>Rest-Api</span><br>Created Rest-Api</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>High School</span><br>Completed at GVHSS Meppayur</li>
+                            <li><span>Collage</span><br>Persuing CSE at SRM institute of Science and technology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------portfolio--------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="subtitle">My Work</h1>
+            <div class="work-list">
+               <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Nodejs</h2>
+                    <p>Created a wallpaper downloader for a whatsapp bot</p>
+                    <a href="https://gist.github.com/darkdeathoriginal/e9a485094b4f009f2c39c585b6dad10a/">Learn more</a>
+               </div> 
+               <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Nodejs</h2>
+                    <p>Created a book downloader for a whatsapp bot</p>
+                    <a href="https://gist.github.com/darkdeathoriginal/defb104568f9c0b82e0cc745a02196d0/">Learn more</a>
+               </div> 
+               <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Nodejs</h2>
+                    <p>Scraped Academia website to get attendance and timetable.</p>
+                    <a href="https://gist.github.com/darkdeathoriginal/35931c332bd5938663b34cf232a445e7/">Learn more</a>
+               </div> 
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- ----------contact---------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>anwinsharon@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>9072215994</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="Email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Mesage"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Made with <i class="fa-solid fa-heart"></i> by Anwin Sharon</p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName('tab-links')
+        var tabcontents = document.getElementsByClassName('tab-contents')
+        function opentab(name){
+            for(i of tablinks){
+                i.classList.remove("active-link")
+            }
+            for(i of tabcontents){
+                i.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(name).classList.add("active-tab")
+        }
+
+
+        var sidemenu = document.getElementById("sidemenu")
+        function openmenu(){
+            sidemenu.style.right = "0"
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200"
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby52Tm1IzXiZ7LXxSrphw031a1cjkl_291foaobmvrQSbCIkR7rHYIfq4CySE70Q0qDLQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message send succesfully"
+                setTimeout(function(){
+                    msg.innerHTML=''
+                }),3000
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      
+</body>
+</html>
