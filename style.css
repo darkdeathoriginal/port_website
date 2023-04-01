@@ -202,7 +202,6 @@ nav ul li a:hover::after{
 }
 .contact-right form{
     width: 100%;
-
 }
 form input, form textarea{
     width: 100%;
@@ -287,6 +286,7 @@ nav .fas{
     }
     .copyright{
         font-size: 14px;
+        
     }
 }
 #msg{
