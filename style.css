@@ -150,10 +150,17 @@ nav ul li a:hover::after{
     margin-top: 20px;
     display: inline-block;
 }
+.work-list div p .alink{
+    color:#ff004f;
+}
 .work-list div:hover{
     background: #ff004f;
     transform: translateY(-10px);
 }
+.work-list div:hover .alink {
+    color:#262626;
+}
+
 .btn{
     display: block;
     margin: 50px auto;
